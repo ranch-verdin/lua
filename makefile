@@ -29,13 +29,12 @@ CWARNSC= -Wdeclaration-after-statement \
 	-Wmissing-prototypes \
 	-Wnested-externs \
 	-Wstrict-prototypes \
-	-Wc++-compat \
 	-Wold-style-definition \
 
 
 CWARNS= $(CWARNSCPP) $(CWARNSC)
 
-
+# 	-Wc++-compat
 # -DEXTERNMEMCHECK -DHARDSTACKTESTS -DHARDMEMTESTS -DTRACEMEM='"tempmem"'
 # -g -DLUA_USER_H='"ltests.h"'
 # -pg -malign-double
@@ -50,12 +49,12 @@ LOCAL = $(TESTS) $(CWARNS) -g
 
 
 # enable Linux goodies
-MYCFLAGS= $(LOCAL) -std=c99 -DLUA_USE_LINUX -DLUA_COMPAT_5_2
+MYCFLAGS= $(LOCAL) -std=c99 -DLUA_USE_LINUX -DLUA_COMPAT_5_2 -g
 MYLDFLAGS= $(LOCAL) -Wl,-E
 MYLIBS= -ldl -lreadline -lhistory -lncurses
 
 
-CC= clang-3.6
+CC= gcc
 CFLAGS= -Wall -O2 $(MYCFLAGS)
 AR= ar rcu
 RANLIB= ranlib
