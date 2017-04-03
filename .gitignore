@@ -1,0 +1,9 @@
+# ignore executable
+lua
+
+# ignore objects and archives
+*.[oa]
+
+# ignore emacs cruft
+\#*\#
+*.*~
