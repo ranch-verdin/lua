@@ -54,8 +54,9 @@ MYLDFLAGS= $(LOCAL) -Wl,-E
 MYLIBS= -ldl -lreadline -lhistory -lncurses
 
 
-ifndef CC
 CC=gcc
+ifdef BUILDROOT_CC
+CC=$(BUILDROOT_CC)
 endif
 
 CFLAGS= -Wall -O2 $(MYCFLAGS)
