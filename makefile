@@ -96,7 +96,8 @@ o:	$(ALL_O)
 a:	$(ALL_A)
 
 $(CORE_T): $(CORE_O) $(AUX_O) $(LIB_O)
-	$(AR) $@ $?
+#	$(AR) $@ $?
+	touch $@
 	$(RANLIB) $@
 
 $(LUA_T): $(LUA_O) $(CORE_T)
