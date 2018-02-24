@@ -54,7 +54,10 @@ MYLDFLAGS= $(LOCAL) -Wl,-E
 MYLIBS= -ldl -lreadline -lhistory -lncurses
 
 
-CC= gcc
+ifndef CC
+CC=gcc
+endif
+
 CFLAGS= -Wall -O2 $(MYCFLAGS)
 AR= ar rcu
 RANLIB= ranlib
