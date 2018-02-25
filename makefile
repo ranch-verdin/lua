@@ -98,10 +98,10 @@ a:	$(ALL_A)
 $(CORE_T): $(CORE_O) $(AUX_O) $(LIB_O)
 #	$(AR) $@ $?
 	touch $@
-	$(RANLIB) $@
+#	$(RANLIB) $@
 
 $(LUA_T): $(LUA_O) $(CORE_T)
-	$(CC) -o $@ $(MYLDFLAGS) $(LUA_O) $(CORE_T) $(LIBS) $(MYLIBS) $(DL)
+	$(CC) -o $@ $(MYLDFLAGS) $(LUA_O) $(CORE_O) $(AUX_O) $(LIB_O) $(LIBS) $(MYLIBS) $(DL)
 
 $(LUAC_T): $(LUAC_O) $(CORE_T)
 	$(CC) -o $@ $(MYLDFLAGS) $(LUAC_O) $(CORE_T) $(LIBS) $(MYLIBS)
